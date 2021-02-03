@@ -1,0 +1,348 @@
+.container-principal-contato {
+  position: relative;
+}
+
+.container-principal-contato::before, 
+.container-principal-contato::after {
+ content: "";
+ display: block;
+ width: 50px;
+ height: 970px;
+ background-image: url(../img/bg-lados.png);
+ position: absolute;
+ top: 20px;
+ background-position: center;
+ background-size: cover;
+ z-index: -1;
+ background-repeat: no-repeat;
+}
+
+.container-principal-contato::before {
+  left: 0;
+  top: 20px;
+  transform: rotate(180deg);
+}
+
+.container-principal-contato::after {
+  right: 0;
+  top: 120px;
+}
+.img-ondulada-container {
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 300px;
+  margin-top: 60px;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contato-h1 {
+  font-family: 'Barlow-Medium';
+  font-size: 36px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*css do formulario */
+
+.formulario p{
+  font-family: 'Barlow-Regular';
+  font-size: 21px;
+  color: #707070;
+  text-align: center;
+}
+
+.formulario form{
+  width: 517px;
+  margin: 0 auto;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.form__group span{
+ list-style: none;
+}
+
+.form__field {
+  font-family: 'Barlow-Regular';
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  outline: 0;
+  font-size: 1.0rem;
+  color: #707070;  
+  padding: 7px 7px;
+  background: transparent;
+  transition: border-color 0.2s;
+  border: 0.5px solid #707070;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 20px;
+  cursor: text;
+  top: 20px;
+  font-family: 'Barlow-Regular';
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 20px;
+  color: #707070;
+  background-color: white;
+  margin-left: 8px;
+  font-family: 'Barlow-Regular';
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 0.5px;
+  border: 0.5px solid #5E8402;
+  border-image-slice: 1;
+  border-radius: 4px;
+}
+.form__field:focus ~ .form__label{
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 20px;
+  color: #2F4201;
+  font-weight: 700;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 0px;
+  font-family: 'Barlow-Regular';
+}
+.form__field:focus ~ .form__label span{
+  color: #5E8402;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+textarea{
+  height: 150px;
+}
+button{
+  font-family: 'Barlow-Medium';
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button-fdr{
+  width: 260px;
+  height: 60px;
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #2F4201;
+  color: #2F4201;
+}
+.button-fdr:hover {
+ width: 270px;
+ letter-spacing: 0px;
+ -webkit-box-shadow: 0px 5px 40px -10px #2F4201;
+}
+
+/*MENU DESKTOP*/
+@media only screen and (min-width: 1190px) {
+  .logo-mobile{
+    display: none;
+  }
+  .openSidebarMenu {
+    display: none;
+  }
+  .menu-topo {
+    padding: 25px 140px;
+  }
+  .menu-topo.menu-fixed {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+  .nav-menu{
+    width: 70%;
+    transition: .4s;
+  }
+
+  .nav-menu ul{
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+  }
+
+  .nav-menu li:last-child {
+    border-right: none;
+  }
+  .nav-menu a{
+    font-family: 'Barlow-Medium';
+    font-size: 17px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .logo img {
+    width: 140px;
+  }
+  .formulario iframe{
+    width: 600px;
+    height: 420px;
+  }
+}
+
+
+@media only screen and (max-width: 1189px) {
+  .logo {
+    display: none;
+  }
+
+  .container-principal-contato::before, 
+  .container-principal-contato::after{
+    display: none;
+  }
+  .menu-topo {
+    padding: 25px 35px;
+    height: 100px;
+  }
+  .nav-menu {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #5E8402;
+    transform: translateX(-100%);
+    transition: transform 250ms ease-in-out;
+    padding: 60px 35px;
+  }
+
+  .nav-menu li{
+    list-style: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px 0;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    font-family: 'Barlow-Medium';
+    font-size: 15px;
+  }
+  .nav-menu li a{
+    color: #fff;
+    text-decoration: none;
+  }
+
+  input[type="checkbox"]:checked ~ .nav-menu {
+    transform: translateX(0);
+  }
+
+  input[type=checkbox] {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+  }
+  .sidebarIconToggle {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99999;
+    height: 100%;
+    width: 100%;
+    top: 40px;
+    height: 17px;
+    width: 25px;
+  }
+  .spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+  }
+  .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 3px;
+  }
+  .diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+  }
+  .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 3px;
+  }
+  input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+  }
+  input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+  }
+  input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+  }
+  .img-ondulada-container {
+    height: auto;
+    margin-top: 0;
+    padding-top: 100px;
+  }
+  .centered{
+    top: 70%;
+  }
+  .contato-h1 {
+    font-size: 16px;
+    font-family: 'Barlow-Bold';
+  }
+  .logo-mobile img{
+    width: 110px;
+    height: 46px;
+  }
+
+  h1.logo-mobile{
+    text-align: center;
+  }
+  
+  .formulario iframe{
+    width: 100%;
+    height: 250px;
+  }
+}
